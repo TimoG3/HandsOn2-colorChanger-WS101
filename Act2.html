@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HandsOn2</title>
+    <style>
+        * {
+            background-color: darkgray;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 3em;
+            user-select: none;
+        }
+
+        #container {
+            background-color: rgb(116, 116, 116);
+            height: 25em;
+            width: 50em;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: auto;
+            border-left: 20px groove darkslategrey;
+            border-right: 20px ridge darkslategrey;
+            border-top: 20px ridge darkslategrey;
+            border-bottom: 20px groove darkslategrey;
+
+        }
+
+        #boxcolor {
+            background-color: green;
+            width: 15em;
+            height: 15em;
+            margin: 20px;
+            border: 10px solid black;
+            border-radius: 15px;
+            transition: background-color 0.5s ease-in-out;
+        }
+
+        button {
+            cursor: pointer;
+            font-size: 1em;
+            height: 3em;
+            width: 10em;
+            margin: 15px;
+            background-color: green;
+            transition: 0.3s;
+            border: 5px solid black;
+            border-radius: 15px;
+            transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out, border-color 0.5s ease-in-out;
+        }
+
+        button:hover {
+            color: white;
+            background-color: blue;
+            border-color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript colorChanger() Hands-On</h1>
+    <div id="container">
+        <div id="boxcolor"></div>
+        <button id="colorBtn">Click Me</button>
+    </div>
+
+    <script>
+        const boxcolor = document.getElementById("boxcolor");
+        let colorBtn = document.getElementById("colorBtn");
+
+        colorBtn.addEventListener("click", switchColor);
+
+        function switchColor() {
+            if (boxcolor.style.backgroundColor === "green") {
+                boxcolor.style.backgroundColor = "blue";
+            } else {
+                boxcolor.style.backgroundColor = "green";
+            }
+        }
+    </script>
+    
+</body>
+</html>
